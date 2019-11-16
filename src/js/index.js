@@ -21,6 +21,9 @@ const city = document.querySelector('#city');
 const bw = document.querySelector('#bw');
 const error = document.querySelector('#error');
 const errorClose = document.querySelector('#error-close');
+const login = document.getElementById('login');
+// const outputText = document.getElementById('output');
+
 
 let isImgLoaded = 'false';
 let currentColor = 'rgb(196, 196, 196)';
@@ -336,3 +339,12 @@ load.addEventListener('click', () => {
 });
 
 bw.addEventListener('click', toGrayScale);
+
+login.addEventListener('click', (e) => {
+  e.preventDefault()
+  const authenticator = new netlify.default ({})
+  authenticator.authenticate({provider:"github", scope: "user"}, (err, data) => {
+    err ? login.innerText = "Error Authenticating with GitHub: " + err : 
+    login.innerText = "Authenticated with GitHub. Access Token: " + data.token
+  })
+});
