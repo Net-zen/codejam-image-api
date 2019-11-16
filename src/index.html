@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700,700i&display=swap" rel="stylesheet">
+  <title>piskel clone</title>
+</head>
+<body>
+  <header class="header">
+    <div class="burger_menu">
+      <div class="burger_menu--toggle_btn"></div>
+    </div>
+    <h1 class="title">CodeJam - Palette</h1>
+    <div class="dropdown_menu">
+      <ul class="dropdown_menu--list">
+        <li class="dropdown_menu--item"></li>
+        <li class="dropdown_menu--item"></li>
+        <li class="dropdown_menu--item"></li>
+      </ul>
+    </div>
+  </header>
+  <main class="main">
+    <div class="main--left">
+      <ul class="tools--list">
+        <li class="tools--item tools--item-paint_bucket" id="paint-bucket">Paint bucket</li>
+        <li class="tools--item tools--item-choose_color" id="color-picker">Choose color</li>
+        <li class="tools--item tools--item-pencil tools--item-active" id="pencil">Pencil</li>
+        <li class="tools--item tools--item-transform tools--item-disabled">Transform</li>
+      </ul>
+      <ul class="colors--list" id="colors-list">
+        <label for="input_color" class="color_picker--label" id="color_picker-label">
+          <li class="colors--item colors--item-current_color" id="current-color-element">
+            <div class="colors--item_color colors--item_color-current_color" id="current_color-mark"></div>
+            <input type="color" class="color_picker" id="input_color" value="#c4c4c4">
+            Current color
+          </li>
+        </label>
+        <li class="colors--item colors--item-prev_color" id="prev-color-element">
+            <div class="colors--item_color colors--item_color-prev_color" id="color-prev-mark"></div>
+            Prev color</li>
+        <li class="colors--item colors--item-red" id="red-color-element">
+            <div class="colors--item_color colors--item_color-red" id="color-red-mark"></div>
+            red</li>
+        <li class="colors--item colors--item-blue" id="blue-color-element">
+            <div class="colors--item_color colors--item_color-blue" id="color-blue-mark"></div>
+            blue</li>
+      </ul>
+    </div>
+    <div class="main--right">
+      <div class="draw_field">
+      <div class="img_api">
+        <button class="img_api--button img_api--button-load" id="load">Load</button>
+        <input type="text" name="img_api--input_city" id="city" class="img_api--input_city" placeholder="Town">
+        <button class="img_api--button img_api--button-bw" id="bw">B&W</button>
+      </div>
+        <canvas class="draw_field--canvas" id="canvas" width="4" height="4"></canvas>
+      </div>
+      <div class="size_switcher">
+        <ul class="size_switcher--list" id="size-switcher">
+          <li class="size_switcher--item">
+            <input type="radio" class="size_switcher--input" id="size_switcher--input_128x128" name="size_switcher--input" value="128x128" checked>
+            <label for="size_switcher--input_128x128" class="size_switcher--label">
+                128x128
+            </label>
+          </li>
+          <li class="size_switcher--item">
+            <input type="radio" class="size_switcher--input" id="size_switcher--input_256x256" name="size_switcher--input" value="256x256">
+            <label for="size_switcher--input_256x256" class="size_switcher--label">
+                256x256
+            </label>
+          </li>
+          <li class="size_switcher--item">
+            <input type="radio" class="size_switcher--input" id="size_switcher--input_512x512" name="size_switcher--input" value="512x512">
+            <label for="size_switcher--input_512x512" class="size_switcher--label">
+                512x512
+            </label>
+          </li>
+          <li class="size_switcher--item">
+            <div class="size_switcher--reset" id="reset">
+              Reset canvas
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </main>
+  <figure id="error" class="error">
+    <figcaption class="error--caption">Error</figcaption>
+    <p class="error--text">Image not loaded. Please, load image first</p>
+    <div class="error--close" id="error-close"></div>
+  </figure>
+</body>
+</html>
