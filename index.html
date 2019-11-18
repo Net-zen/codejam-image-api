@@ -17,8 +17,13 @@
     <div class="burger_menu">
       <div class="burger_menu--toggle_btn"></div>
     </div>
-    <h1 class="title">CodeJam - Palette</h1>
-    <button class="login" id="login">Login</button>
+      <h1 class="title" id="title">CodeJam - Palette</h1>
+    <div class="user user-hidden" id="user">
+      <img src="#" alt="User avatar" class="user--avatar" id="user-avatar">
+      <a href="" class="user--link" id="user-link"></a>
+      <button class="button button-black user--logout" id="user-logout">Logout</button>
+    </div>
+    <button class="button login" id="login">Login</button>
     <div class="dropdown_menu">
       <ul class="dropdown_menu--list">
         <li class="dropdown_menu--item"></li>
@@ -57,9 +62,9 @@
     <div class="main--right">
       <div class="draw_field">
       <div class="img_api">
-        <button class="img_api--button img_api--button-load" id="load">Load</button>
+        <button class="button img_api--button img_api--button-load" id="load">Load</button>
         <input type="text" name="img_api--input_city" id="city" class="img_api--input_city" placeholder="Town">
-        <button class="img_api--button img_api--button-bw" id="bw">B&W</button>
+        <button class="button img_api--button img_api--button-bw" id="bw">B&W</button>
       </div>
         <canvas class="draw_field--canvas" id="canvas" width="4" height="4"></canvas>
       </div>
